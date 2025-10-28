@@ -36,7 +36,7 @@ function spin() {
   resultDisplay.onclick = null;
   resultDisplay.classList.remove("cursor-pointer");
   // 000~999 난수 생성 유지
-  const finalNumber = Math.floor(Math.random() * PR_COUNT);
+  const finalNumber = Math.floor(Math.random() * PR_COUNT) + 1;
   const finalDigits = String(finalNumber)
     .padStart(3, "0")
     .split("")
@@ -45,7 +45,7 @@ function spin() {
   let allReels = [];
 
   // 각 릴에 대해 애니메이션 적용 (기존 로직 유지)
-  for (let i = 1; i <= NUM_REELS; i++) {
+  for (let i = 0; i < NUM_REELS; i++) {
     const reel = document.getElementById(`reel${i}`);
     const finalValue = finalDigits[i];
 
