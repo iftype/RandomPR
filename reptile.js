@@ -46,12 +46,11 @@ document.addEventListener("mousemove", function (event) {
 //Sets up canvas
 var canvas = document.createElement("canvas");
 document.body.appendChild(canvas);
-canvas.width = Math.max(window.innerWidth, window.innerWidth);
+// canvas.width = Math.max(window.innerWidth, window.innerHeight);
+// canvas.height = Math.max(window.innerWidth, window.innerHeight);
 
-//canvas.height = Math.max(window.innerWidth, window.innerWidth);
-
-canvas.height = window.innerHeight;
-canvas.style.position = "absolute";
+// 1. 초기 캔버스 크기 설정
+canvas.style.position = "fixed";
 canvas.style.zIndex = "-1";
 canvas.style.left = "0px";
 canvas.style.top = "0px";
@@ -59,6 +58,30 @@ document.body.style.overflow = "hidden";
 var ctx = canvas.getContext("2d");
 //Necessary classes
 var segmentCount = 0;
+function resizeCanvas() {
+  // 캔버스의 너비와 높이를 현재 윈도우 크기에 맞춤
+  console.log("object");
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  canvas.style.backgroundColor = "black";
+  ctx.strokeStyle = "white";
+
+  // 3. Critter를 즉시 한 번 다시 그립니다. (요소 사라짐 방지)
+  if (typeof critter !== "undefined" && critter.follow) {
+    // 기존 애니메이션 루프에서 하던 작업을 여기서 한 번 수행합니다.
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    critter.follow(Input.mouse.x, Input.mouse.y);
+  }
+}
+resizeCanvas();
+let resizeTimeout;
+window.addEventListener("resize", function () {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(function () {
+    resizeCanvas(); // 이 함수 안에서 critter를 즉시 다시 그립니다.
+  }, 100);
+});
 class Segment {
   constructor(parent, size, angle, range, stiffness) {
     segmentCount++;
