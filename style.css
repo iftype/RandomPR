@@ -77,3 +77,79 @@ body {
 .result-message-animated {
   animation: result-appear 0.5s ease-out forwards; /* 0.5초 동안 실행 후 최종 상태 유지 */
 }
+
+/* style.css */
+
+/* 1. 모바일 빈틈 및 스크롤 제거 (필수) */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* 수평 스크롤 방지 */
+}
+
+/* 2. 슬롯 릴 크기 및 스타일 정의 (JS ITEM_HEIGHT=100과 일치) */
+.slot-container {
+  overflow: hidden; /* 릴이 컨테이너 밖으로 나가는 것을 숨김 */
+  flex: 1; /* ⭐ JavaScript에서 flex-1 클래스를 추가하는 대신 여기에 직접 적용합니다. */
+}
+
+.slot-reel {
+  /* 트랜지션이 적용될 요소 */
+}
+
+.slot-item {
+  /* 릴 아이템의 크기: ITEM_HEIGHT(100)와 일치 */
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  font-size: 50px; /* 숫자가 잘 보이도록 폰트 크기 지정 */
+  font-weight: bold;
+  color: white;
+}
+/* style.css */
+
+/* 1. 모바일 빈틈 및 스크롤 제거 (필수) */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* 2. 슬롯 릴 크기 및 스타일 정의 (JS ITEM_HEIGHT=100과 일치) */
+.slot-container {
+  overflow: hidden;
+  flex: 1; /* 공간 균등 분배 */
+  margin: 0;
+  padding: 0;
+}
+
+.slot-reel {
+  margin: 0;
+  padding: 0;
+}
+
+.slot-item {
+  height: 100px; /* JS ITEM_HEIGHT와 일치 */
+  line-height: 100px;
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+
+  /* 너비를 100%로 설정하고 여백을 0으로 강제합니다. */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.tab-button:disabled {
+  /* ⭐ 이 속성이 커서를 금지 표시로 바꿉니다. */
+  cursor: not-allowed !important;
+
+  /* ⭐ 마우스 이벤트가 버튼을 통과하도록 강제합니다. */
+}
