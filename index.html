@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <svg style="display: none" xmlns="http://www.w3.org/2000/svg">
+      <symbol id="monsterball" viewBox="0 0 [원본 SVG의 뷰박스 값]"></symbol>
+    </svg>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random PR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body
+    class="bg-gray-900 min-h-screen flex flex-col items-center justify-center p-8"
+  >
+    <h1
+      class="text-4xl font-extrabold text-white mb-10 flex items-center space-x-2"
+    >
+      <img
+        src="./pokeball-pokemon-svgrepo-com.svg"
+        alt="몬스터볼 아이콘"
+        style="width: 32px; height: 32px"
+        class="**transform translate-y-[-1px]**"
+      />
+      오늘의 PR은?
+    </h1>
+
+    <div
+      id="slot-machine"
+      class="flex space-x-4 mb-8 p-6 bg-gray-800 rounded-xl shadow-2xl"
+    >
+      <!-- 릴은 JavaScript에서 동적으로 채워집니다. -->
+    </div>
+
+    <div class="flex flex-col items-center">
+      <button
+        id="spinButton"
+        onclick="spin()"
+        class="px-8 py-3 bg-red-600 text-white font-bold rounded-full shadow-lg hover:bg-red-700 transition duration-150 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+      ></button>
+      <p
+        id="resultDisplay"
+        class="text-2xl mt-6 text-center text-white px-6 py-3 rounded-lg shadow-xl transform transition-all duration-300 ease-in-out /* 애니메이션을 위한 트랜지션 */"
+      ></p>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="./reptile.js"></script>
+  </body>
+</html>
