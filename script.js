@@ -21,7 +21,7 @@ const CATEGORY_DATA = {
   },
   be: {
     name: "BE",
-    prCount: 915,
+    prCount: 936,
     duration: 4.0,
     path: "java-racingcar-8",
     bgClass: "bg-blue-600",
@@ -30,7 +30,7 @@ const CATEGORY_DATA = {
   },
   an: {
     name: "AN",
-    prCount: 56,
+    prCount: 59,
     duration: 2.0,
     path: "kotlin-racingcar-8",
     bgClass: "bg-green-600",
