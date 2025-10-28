@@ -148,8 +148,6 @@ body {
   padding: 0;
 }
 .tab-button:disabled {
-  /* ⭐ 이 속성이 커서를 금지 표시로 바꿉니다. */
   cursor: not-allowed !important;
-
-  /* ⭐ 마우스 이벤트가 버튼을 통과하도록 강제합니다. */
+  pointer-events: none !important;
 }

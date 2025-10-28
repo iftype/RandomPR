@@ -46,7 +46,7 @@ const resultDisplay = document.getElementById("resultDisplay");
 const currentCategorySpan = document.getElementById("current-category");
 const tabSlider = document.getElementById("tab-slider");
 const tabButtons = document.querySelectorAll(".tab-button");
-
+const categoryTabsContainer = document.getElementById("category-tabs");
 // =======================================================
 // 2. 슬라이더/탭 기능
 // =======================================================
@@ -114,11 +114,11 @@ function spin() {
   const categoryData = CATEGORY_DATA[currentCategory];
   const maxPrCount = categoryData.prCount;
   const DURATION_S = categoryData.duration; // 1. 버튼 상태 변경
-
   tabButtons.forEach((btn) => (btn.disabled = true));
   spinButton.disabled = true;
   spinButton.textContent = "ROLLING...";
   spinButton.classList.remove("ready-to-spin");
+  categoryTabsContainer.classList.add("cursor-not-allowed");
 
   resultDisplay.textContent = "⏳ 회전 중..."; // 초기화: 모양/색상/애니메이션 관련 클래스 모두 제거 (생략)
   resultDisplay.classList.remove(
@@ -204,6 +204,7 @@ function spin() {
     // ⭐ 버튼 활성화 시 hover 효과 복구
     tabButtons.forEach((btn) => (btn.disabled = false));
     spinButton.classList.add(categoryData.hoverClass);
+    categoryTabsContainer.classList.remove("cursor-not-allowed");
   }, totalDuration + 200);
 }
 
