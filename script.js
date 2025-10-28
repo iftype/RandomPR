@@ -59,6 +59,20 @@ const ALL_TEXT_CLASSES = ["text-red-400", "text-blue-400", "text-green-400"];
 const ALL_BG_CLASSES = ["bg-red-600", "bg-blue-600", "bg-green-600"];
 
 function selectCategory(category) {
+  resultDisplay.textContent = "";
+  resultDisplay.classList.remove(
+    "result-message-animated",
+    "px-6",
+    "py-3",
+    "rounded-lg",
+    "shadow-xl",
+    "bg-gray-800",
+    "bg-green-700",
+    "bg-yellow-700",
+    "text-green-300",
+    "text-yellow-300"
+  );
+
   if (currentCategory === category) {
     const data = CATEGORY_DATA[category];
     spinButton.textContent = `SPIN! (총 ${data.prCount}개)`;

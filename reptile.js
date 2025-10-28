@@ -235,7 +235,7 @@ class LegSystem extends LimbSystem {
       var dist =
         ((this.end.x - this.goalX) ** 2 + (this.end.y - this.goalY) ** 2) **
         0.5;
-      if (dist > 1) {
+      if (dist > 10) {
         this.step = 1;
         //this.goalX=x;
         //this.goalY=y;
@@ -587,9 +587,5 @@ ctx.strokeStyle = "white";
 //setupTentacle();//Tentacle that reaches for mouse
 //setupLizard(.5,100,128);//Literal centipede
 //setupSquid(2,8);//Spidery thing
-var legNum = Math.floor(1 + Math.random() * 12);
-setupLizard(
-  8 / Math.sqrt(legNum),
-  legNum,
-  Math.floor(4 + Math.random() * legNum * 8)
-);
+var legNum = Math.floor(14);
+setupLizard(4 / Math.sqrt(legNum), legNum, Math.floor(60));
