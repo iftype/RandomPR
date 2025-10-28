@@ -1,7 +1,7 @@
 const PR_COUNT = 214;
 
 const NUM_REELS = 3;
-const ITEM_HEIGHT = 120;
+const ITEM_HEIGHT = 100;
 const SYMBOLS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 const SYMBOL_COUNT = SYMBOLS.length;
 const DURATION_S = 3;
